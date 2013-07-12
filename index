@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale = 1.0, width = device-width"/>
+<title>My Blog</title>
+<link href="css/normalize.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<script src="js/html5shiv.js"> </script>
+</head>
+
+<body>
+<header id="header_main">
+  <div class="container">
+      <a href="#"> <canvas id="canvas" width="100px" height= "60px"> Logo </canvas> </a>
+    	<nav>
+           <ul>
+             <li class="selected"><a href="#">Home</a></li>
+             <li class="separator">|</li>
+             <li><a href="categories.html">Categories</a></li>
+             <li class="separator">|</li>
+             <li><a href="#">Contact</a></li>
+             </ul>
+        </nav>
+    </div>    
+    </header>
+<div class="container overflow">	
+    <section>
+    	<header>
+	    	<h1> Select a category.</h1>
+            <p> Also you can drag and re-arrange the categories in the order you wish to.....</p>
+        </header>    
+        <ul class="categories">
+        	<li>Category1</li>     
+            <li>Category2 </li>
+            <li>Category3 </li>
+            <li>Category4 </li>
+            <li>Category5 </li>
+            <li>Category6 </li>
+            <li>Category7 </li>
+            <li>Category8 </li>
+            <li>Category9 </li>
+            <li>Category10 </li>
+            <li>Category11 </li>
+            <li>Category12 </li>
+		</ul>            
+    </section>    
+</div>
+<footer>
+    	<p> Footer links here</p>
+    </footer>
+<script src="js/jquery.js"></script>
+<script src="js/blog.js"></script>
+<script src="js/jquery-ui-1.10.0.custom.js"></script>
+</body>
+</html>
+
+@charset "utf-8";
+/* CSS Document */
+/*Main CSS*/
+body
+{
+  color: #000000 /*{d-body-color}*/;
+	text-shadow: 0 /*{d-body-shadow-x}*/ 1px /*{d-body-shadow-y}*/ 0 /*{d-body-shadow-radius}*/ #eeeeee /*{d-body-shadow-color}*/;
+	background: #ffffff /*{d-body-background-color}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #FFFFFF /*{d-body-background-start}*/), to( #e5e5e5 /*{d-body-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #FFFFFF /*{d-body-background-start}*/, #e5e5e5 /*{d-body-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #FFFFFF /*{d-body-background-start}*/, #e5e5e5 /*{d-body-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #FFFFFF /*{d-body-background-start}*/, #e5e5e5 /*{d-body-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #FFFFFF /*{d-body-background-start}*/, #e5e5e5 /*{d-body-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #FFFFFF /*{d-body-background-start}*/, #e5e5e5 /*{d-body-background-end}*/);
+	overflow-x:hidden;
+	font-size:100%;
+}
+.container
+{
+	margin-left:auto;
+	margin-right:auto;
+	width: 80%;
+	max-width: 81.5em;
+	clear:both;
+}
+header
+{
+	clear:both;
+}
+#header_main
+{	
+	background: #0fb4e7; /* Old browsers */
+	background: -moz-linear-gradient(top,  #0fb4e7 0%, #39bde5 50%, #0fb4e7 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0fb4e7), color-stop(50%,#39bde5), color-stop(100%,#0fb4e7)); /*     Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #0fb4e7 0%,#39bde5 50%,#0fb4e7 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #0fb4e7 0%,#39bde5 50%,#0fb4e7 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #0fb4e7 0%,#39bde5 50%,#0fb4e7 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #0fb4e7 0%,#39bde5 50%,#0fb4e7 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0fb4e7', endColorstr='#0fb4e7',GradientType=0 ); /* IE6-9 */
+	box-shadow: 2px 3px 2px #808080;
+	clear:both;
+
+}
+nav
+{
+		float:right;
+		clear:both;
+}
+nav a
+{
+	display:block;
+	text-decoration:none;
+	color:#ffffff;
+	padding:0.625em 1.25em;
+}
+nav a:hover
+{
+	/*background-color:#009ec3;
+	display:block;
+	text-decoration:none;*/
+	color:#222222;
+	text-shadow:none;
+}
+nav li
+{
+	display:block;
+	float:left;
+}
+.separator
+{
+	color:#0079C4;
+	padding-top: 10px;
+}
+.border
+{
+	border-bottom:1px solid #c9de96;
+}
+li.selected
+{
+	color:red;
+	text-shadow:none;
+}
+section
+{
+	margin-left:2%;
+	margin-right: 1%;
+	clear:both;	
+}
+article
+{
+
+}
+aside
+{
+	margin-left:1.041666666666667%;
+	margin-right:1.041666666666667%;
+	float:right;
+	width: 22.708333333333%;
+	margin-top:1%;
+}
+.categories { list-style-type: none; margin: 0; padding: 0;
+
+}
+.categories li
+{
+	list-style:none;
+	position:relative;
+	margin-top: 3%;
+	min-height: 10em;
+	margin-right: 3%;
+	float: left;
+	border: 1px solid #c0c0c0;
+	padding: 5px 0;
+	text-align: center; 
+	width: 13.35em;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 5px;
+	-webkit-box-shadow: #808080 2px 2px 2px;
+	-moz-box-shadow: #808080 2px 2px 3px;
+	box-shadow: #808080 2px 2px 3px;	
+
+}	
+.categories li:hover
+{
+	transform: rotate(15deg);
+-ms-transform: rotate(15deg); /* IE 9 */
+-webkit-transform: rotate(15deg); /* Safari and Chrome */
+-o-transform: rotate(15deg); /* Opera */
+-moz-transform: rotate(15deg); /* Firefox */
+}
+.categories li:active
+{
+	transform: none;
+-ms-transform:  none; /* IE 9 */
+-webkit-transform:  none; /* Safari and Chrome */
+-o-transform:  none; /* Opera */
+-moz-transform:  none; /* Firefox */
+}
+.categories ul
+{
+	padding: 0 0 0 0 !important;
+}
+.category_slide
+{
+	display:none;
+	margin-top: 1.428571428571429%;
+	height: 4.5em;
+	margin-right: 1.428571428571429%;
+	float: left;
+	border: 1px solid #19546E;
+	padding: 5px 0;
+	text-align: center; 
+	width: 12em;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-box-shadow: #666 2px 2px 3px;
+	-moz-box-shadow: #666 2px 2px 3px;
+	box-shadow: #666 2px 2px 3px;	
+	background: #7c9dad;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#7c9dad), to(#ffffff));
+	background: -webkit-linear-gradient(#7c9dad, #ffffff);
+	background: -moz-linear-gradient(#7c9dad, #ffffff);
+	background: -ms-linear-gradient(#7c9dad, #ffffff);
+	background: -o-linear-gradient(#7c9dad, #ffffff);
+	background: linear-gradient(#7c9dad, #ffffff);
+	-pie-background: linear-gradient(#7c9dad, #ffffff);
+	behavior: url(/PIE.htc);
+}
+.overflow
+{
+	padding-bottom: 4%;
+	overflow:hidden;
+}	
+footer
+{
+
+	margin-top: 10px;
+	clear:both;
+	width: 97.91666666666667;
+	border-top: 1px solid #c9de96;
+	background: #0fb4e7; /* Old browsers */
+	background: -moz-linear-gradient(top,  #0fb4e7 0%, #39bde5 50%, #0fb4e7 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0fb4e7), color-stop(50%,#39bde5), color-stop(100%,#0fb4e7)); /*     Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #0fb4e7 0%,#39bde5 50%,#0fb4e7 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #0fb4e7 0%,#39bde5 50%,#0fb4e7 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #0fb4e7 0%,#39bde5 50%,#0fb4e7 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #0fb4e7 0%,#39bde5 50%,#0fb4e7 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0fb4e7', endColorstr='#0fb4e7',GradientType=0 ); /* IE6-9 */
+	box-shadow: 2px 3px -3px #808080;
+}
+
+/*CSS media queries*/
+@media screen and (max-width: 480px) {
+	nav
+	{
+		float:left;
+	}
+	nav a
+	{
+		display:block;
+		text-decoration:none;
+		color:#ffffff;
+	}
+	nav a:hover
+	{
+		display:block;
+		text-decoration:none;
+		color:#222222;
+	}
+	nav ul li
+	{
+	margin-bottom: 2%;
+	margin-left:0px;
+	border:1px solid #ccc;
+	border-radius:8px;
+	background: #3DCDFA; 
+	text-shadow: none;
+	width: 100%;
+	}
+	nav ul li:hover
+	{
+	background: #17B5E6; 
+	text-shadow: none;
+	}
+	.separator
+	{
+		display:none;
+	}
+	nav ul
+	{
+		padding: 0 0 0 0;
+	}
+	h1
+	{
+		font-size:1.25em !important;
+	}
+	.categories ul
+	{
+	padding: 0px !important;
+	}
+	.categories li
+	{
+		display:block;
+		border:1px solid #ccc;
+		border-radius: 5px;
+	}
+	aside
+	{
+		float:left;
+	}
+}
+@media  screen and (min-width: 481px) and (max-width: 500px)
+{
+	nav
+	{
+		float:left;
+	}
+	nav a
+	{
+		display:block;
+		text-decoration:none;
+		color:#ffffff;
+	}
+	nav a:hover
+	{
+		display:block;
+		text-decoration:none;
+		color:#222222;
+	}
+	nav ul li
+	{
+	margin-bottom: 2%;
+	margin-left:0px;
+	border:1px solid #ccc;
+	border-radius:8px;
+	background: #3DCDFA; 
+	text-shadow: none;
+	float:left;
+	margin-right:5px;
+	}
+	nav ul li:hover
+	{
+	background: #17B5E6; 
+	text-shadow: none;
+	}
+	.separator
+	{
+		display:none;
+	}
+	nav ul
+	{
+		padding: 0 0 0 0;
+	}
+}
